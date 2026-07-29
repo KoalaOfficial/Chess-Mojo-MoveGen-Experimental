@@ -1,0 +1,701 @@
+
+main:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 d9 2f 00 00 	mov    0x2fd9(%rip),%rax        # 3fe8 <__gmon_start__@Base>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	call   *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000001020 <fdopen@plt-0x10>:
+    1020:	ff 35 32 2f 00 00    	push   0x2f32(%rip)        # 3f58 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 34 2f 00 00    	jmp    *0x2f34(%rip)        # 3f60 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000001030 <fdopen@plt>:
+    1030:	ff 25 32 2f 00 00    	jmp    *0x2f32(%rip)        # 3f68 <fdopen@GLIBC_2.2.5>
+    1036:	68 00 00 00 00       	push   $0x0
+    103b:	e9 e0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001040 <memcpy@plt>:
+    1040:	ff 25 2a 2f 00 00    	jmp    *0x2f2a(%rip)        # 3f70 <memcpy@GLIBC_2.14>
+    1046:	68 01 00 00 00       	push   $0x1
+    104b:	e9 d0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001050 <KGEN_CompilerRT_GetOrCreateGlobal@plt>:
+    1050:	ff 25 22 2f 00 00    	jmp    *0x2f22(%rip)        # 3f78 <KGEN_CompilerRT_GetOrCreateGlobal@Base>
+    1056:	68 02 00 00 00       	push   $0x2
+    105b:	e9 c0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001060 <KGEN_CompilerRT_SetArgV@plt>:
+    1060:	ff 25 1a 2f 00 00    	jmp    *0x2f1a(%rip)        # 3f80 <KGEN_CompilerRT_SetArgV@Base>
+    1066:	68 03 00 00 00       	push   $0x3
+    106b:	e9 b0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001070 <fclose@plt>:
+    1070:	ff 25 12 2f 00 00    	jmp    *0x2f12(%rip)        # 3f88 <fclose@GLIBC_2.2.5>
+    1076:	68 04 00 00 00       	push   $0x4
+    107b:	e9 a0 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001080 <KGEN_CompilerRT_AsyncRT_GetCurrentCPUDevice@plt>:
+    1080:	ff 25 0a 2f 00 00    	jmp    *0x2f0a(%rip)        # 3f90 <KGEN_CompilerRT_AsyncRT_GetCurrentCPUDevice@Base>
+    1086:	68 05 00 00 00       	push   $0x5
+    108b:	e9 90 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001090 <fflush@plt>:
+    1090:	ff 25 02 2f 00 00    	jmp    *0x2f02(%rip)        # 3f98 <fflush@GLIBC_2.2.5>
+    1096:	68 06 00 00 00       	push   $0x6
+    109b:	e9 80 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010a0 <KGEN_CompilerRT_PrintStackTraceOnFault@plt>:
+    10a0:	ff 25 fa 2e 00 00    	jmp    *0x2efa(%rip)        # 3fa0 <KGEN_CompilerRT_PrintStackTraceOnFault@Base>
+    10a6:	68 07 00 00 00       	push   $0x7
+    10ab:	e9 70 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010b0 <KGEN_CompilerRT_DestroyGlobals@plt>:
+    10b0:	ff 25 f2 2e 00 00    	jmp    *0x2ef2(%rip)        # 3fa8 <KGEN_CompilerRT_DestroyGlobals@Base>
+    10b6:	68 08 00 00 00       	push   $0x8
+    10bb:	e9 60 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010c0 <KGEN_CompilerRT_AlignedFree@plt>:
+    10c0:	ff 25 ea 2e 00 00    	jmp    *0x2eea(%rip)        # 3fb0 <KGEN_CompilerRT_AlignedFree@Base>
+    10c6:	68 09 00 00 00       	push   $0x9
+    10cb:	e9 50 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010d0 <write@plt>:
+    10d0:	ff 25 e2 2e 00 00    	jmp    *0x2ee2(%rip)        # 3fb8 <write@GLIBC_2.2.5>
+    10d6:	68 0a 00 00 00       	push   $0xa
+    10db:	e9 40 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010e0 <KGEN_CompilerRT_AsyncRT_ReleaseCPUDevice@plt>:
+    10e0:	ff 25 da 2e 00 00    	jmp    *0x2eda(%rip)        # 3fc0 <KGEN_CompilerRT_AsyncRT_ReleaseCPUDevice@Base>
+    10e6:	68 0b 00 00 00       	push   $0xb
+    10eb:	e9 30 ff ff ff       	jmp    1020 <_init+0x20>
+
+00000000000010f0 <KGEN_CompilerRT_AsyncRT_GetOrCreateCPUDevice@plt>:
+    10f0:	ff 25 d2 2e 00 00    	jmp    *0x2ed2(%rip)        # 3fc8 <KGEN_CompilerRT_AsyncRT_GetOrCreateCPUDevice@Base>
+    10f6:	68 0c 00 00 00       	push   $0xc
+    10fb:	e9 20 ff ff ff       	jmp    1020 <_init+0x20>
+
+0000000000001100 <dup@plt>:
+    1100:	ff 25 ca 2e 00 00    	jmp    *0x2eca(%rip)        # 3fd0 <dup@GLIBC_2.2.5>
+    1106:	68 0d 00 00 00       	push   $0xd
+    110b:	e9 10 ff ff ff       	jmp    1020 <_init+0x20>
+
+Disassembly of section .plt.got:
+
+0000000000001110 <__cxa_finalize@plt>:
+    1110:	ff 25 ca 2e 00 00    	jmp    *0x2eca(%rip)        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>
+    1116:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .text:
+
+0000000000001120 <_start>:
+    1120:	f3 0f 1e fa          	endbr64
+    1124:	31 ed                	xor    %ebp,%ebp
+    1126:	49 89 d1             	mov    %rdx,%r9
+    1129:	5e                   	pop    %rsi
+    112a:	48 89 e2             	mov    %rsp,%rdx
+    112d:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1131:	50                   	push   %rax
+    1132:	54                   	push   %rsp
+    1133:	45 31 c0             	xor    %r8d,%r8d
+    1136:	31 c9                	xor    %ecx,%ecx
+    1138:	48 8d 3d e1 00 00 00 	lea    0xe1(%rip),%rdi        # 1220 <main>
+    113f:	ff 15 b3 2e 00 00    	call   *0x2eb3(%rip)        # 3ff8 <__libc_start_main@GLIBC_2.34>
+    1145:	f4                   	hlt
+    1146:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    114d:	00 00 00 
+
+0000000000001150 <deregister_tm_clones>:
+    1150:	48 8d 3d b1 2e 00 00 	lea    0x2eb1(%rip),%rdi        # 4008 <__TMC_END__>
+    1157:	48 8d 05 aa 2e 00 00 	lea    0x2eaa(%rip),%rax        # 4008 <__TMC_END__>
+    115e:	48 39 f8             	cmp    %rdi,%rax
+    1161:	74 15                	je     1178 <deregister_tm_clones+0x28>
+    1163:	48 8b 05 6e 2e 00 00 	mov    0x2e6e(%rip),%rax        # 3fd8 <_ITM_deregisterTMCloneTable@Base>
+    116a:	48 85 c0             	test   %rax,%rax
+    116d:	74 09                	je     1178 <deregister_tm_clones+0x28>
+    116f:	ff e0                	jmp    *%rax
+    1171:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1178:	c3                   	ret
+    1179:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001180 <register_tm_clones>:
+    1180:	48 8d 3d 81 2e 00 00 	lea    0x2e81(%rip),%rdi        # 4008 <__TMC_END__>
+    1187:	48 8d 35 7a 2e 00 00 	lea    0x2e7a(%rip),%rsi        # 4008 <__TMC_END__>
+    118e:	48 29 fe             	sub    %rdi,%rsi
+    1191:	48 89 f0             	mov    %rsi,%rax
+    1194:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    1198:	48 c1 f8 03          	sar    $0x3,%rax
+    119c:	48 01 c6             	add    %rax,%rsi
+    119f:	48 d1 fe             	sar    $1,%rsi
+    11a2:	74 14                	je     11b8 <register_tm_clones+0x38>
+    11a4:	48 8b 05 45 2e 00 00 	mov    0x2e45(%rip),%rax        # 3ff0 <_ITM_registerTMCloneTable@Base>
+    11ab:	48 85 c0             	test   %rax,%rax
+    11ae:	74 08                	je     11b8 <register_tm_clones+0x38>
+    11b0:	ff e0                	jmp    *%rax
+    11b2:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    11b8:	c3                   	ret
+    11b9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000011c0 <__do_global_dtors_aux>:
+    11c0:	f3 0f 1e fa          	endbr64
+    11c4:	80 3d 3d 2e 00 00 00 	cmpb   $0x0,0x2e3d(%rip)        # 4008 <__TMC_END__>
+    11cb:	75 2b                	jne    11f8 <__do_global_dtors_aux+0x38>
+    11cd:	55                   	push   %rbp
+    11ce:	48 83 3d 0a 2e 00 00 	cmpq   $0x0,0x2e0a(%rip)        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>
+    11d5:	00 
+    11d6:	48 89 e5             	mov    %rsp,%rbp
+    11d9:	74 0c                	je     11e7 <__do_global_dtors_aux+0x27>
+    11db:	48 8b 3d 1e 2e 00 00 	mov    0x2e1e(%rip),%rdi        # 4000 <__dso_handle>
+    11e2:	e8 29 ff ff ff       	call   1110 <__cxa_finalize@plt>
+    11e7:	e8 64 ff ff ff       	call   1150 <deregister_tm_clones>
+    11ec:	c6 05 15 2e 00 00 01 	movb   $0x1,0x2e15(%rip)        # 4008 <__TMC_END__>
+    11f3:	5d                   	pop    %rbp
+    11f4:	c3                   	ret
+    11f5:	0f 1f 00             	nopl   (%rax)
+    11f8:	c3                   	ret
+    11f9:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001200 <frame_dummy>:
+    1200:	f3 0f 1e fa          	endbr64
+    1204:	e9 77 ff ff ff       	jmp    1180 <register_tm_clones>
+    1209:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001210 <main_closure_0>:
+    1210:	e9 db fe ff ff       	jmp    10f0 <KGEN_CompilerRT_AsyncRT_GetOrCreateCPUDevice@plt>
+    1215:	0f 1f 00             	nopl   (%rax)
+
+0000000000001218 <main_closure_1>:
+    1218:	e9 c3 fe ff ff       	jmp    10e0 <KGEN_CompilerRT_AsyncRT_ReleaseCPUDevice@plt>
+    121d:	0f 1f 00             	nopl   (%rax)
+
+0000000000001220 <main>:
+    1220:	55                   	push   %rbp
+    1221:	48 89 e5             	mov    %rsp,%rbp
+    1224:	41 56                	push   %r14
+    1226:	53                   	push   %rbx
+    1227:	48 83 e4 e0          	and    $0xffffffffffffffe0,%rsp
+    122b:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+    1232:	48 89 f3             	mov    %rsi,%rbx
+    1235:	41 89 fe             	mov    %edi,%r14d
+    1238:	e8 43 fe ff ff       	call   1080 <KGEN_CompilerRT_AsyncRT_GetCurrentCPUDevice@plt>
+    123d:	48 85 c0             	test   %rax,%rax
+    1240:	75 1f                	jne    1261 <main+0x41>
+    1242:	48 8d 15 c7 ff ff ff 	lea    -0x39(%rip),%rdx        # 1210 <main_closure_0>
+    1249:	48 8d 0d c8 ff ff ff 	lea    -0x38(%rip),%rcx        # 1218 <main_closure_1>
+    1250:	48 8d 3d 39 0e 00 00 	lea    0xe39(%rip),%rdi        # 2090 <static_string_a61c3395ab9379d9>
+    1257:	be 07 00 00 00       	mov    $0x7,%esi
+    125c:	e8 ef fd ff ff       	call   1050 <KGEN_CompilerRT_GetOrCreateGlobal@plt>
+    1261:	44 89 f7             	mov    %r14d,%edi
+    1264:	48 89 de             	mov    %rbx,%rsi
+    1267:	e8 f4 fd ff ff       	call   1060 <KGEN_CompilerRT_SetArgV@plt>
+    126c:	e8 2f fe ff ff       	call   10a0 <KGEN_CompilerRT_PrintStackTraceOnFault@plt>
+    1271:	c5 fc 28 05 87 0d 00 	vmovaps 0xd87(%rip),%ymm0        # 2000 <_fini+0x63c>
+    1278:	00 
+    1279:	c5 f1 ef c9          	vpxor  %xmm1,%xmm1,%xmm1
+    127d:	b8 08 00 00 00       	mov    $0x8,%eax
+    1282:	66 66 66 66 66 2e 0f 	data16 data16 data16 data16 cs nopw 0x0(%rax,%rax,1)
+    1289:	1f 84 00 00 00 00 00 
+    1290:	48 8d 48 01          	lea    0x1(%rax),%rcx
+    1294:	83 e0 3f             	and    $0x3f,%eax
+    1297:	c5 fc 29 44 24 60    	vmovaps %ymm0,0x60(%rsp)
+    129d:	c5 fd 7f 8c 24 80 00 	vmovdqa %ymm1,0x80(%rsp)
+    12a4:	00 00 
+    12a6:	c6 44 04 60 fe       	movb   $0xfe,0x60(%rsp,%rax,1)
+    12ab:	48 89 c8             	mov    %rcx,%rax
+    12ae:	c5 fc 28 44 24 60    	vmovaps 0x60(%rsp),%ymm0
+    12b4:	c5 fd 6f 8c 24 80 00 	vmovdqa 0x80(%rsp),%ymm1
+    12bb:	00 00 
+    12bd:	48 83 f9 10          	cmp    $0x10,%rcx
+    12c1:	75 cd                	jne    1290 <main+0x70>
+    12c3:	b8 30 00 00 00       	mov    $0x30,%eax
+    12c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    12cf:	00 
+    12d0:	48 8d 48 01          	lea    0x1(%rax),%rcx
+    12d4:	83 e0 3f             	and    $0x3f,%eax
+    12d7:	c5 fc 29 44 24 20    	vmovaps %ymm0,0x20(%rsp)
+    12dd:	c5 fd 7f 4c 24 40    	vmovdqa %ymm1,0x40(%rsp)
+    12e3:	c6 44 04 20 00       	movb   $0x0,0x20(%rsp,%rax,1)
+    12e8:	48 89 c8             	mov    %rcx,%rax
+    12eb:	c5 fc 28 44 24 20    	vmovaps 0x20(%rsp),%ymm0
+    12f1:	c5 fd 6f 4c 24 40    	vmovdqa 0x40(%rsp),%ymm1
+    12f7:	48 83 f9 38          	cmp    $0x38,%rcx
+    12fb:	75 d3                	jne    12d0 <main+0xb0>
+    12fd:	c5 fd 6f 15 1b 0d 00 	vmovdqa 0xd1b(%rip),%ymm2        # 2020 <_fini+0x65c>
+    1304:	00 
+    1305:	c5 fd 6f 1d 33 0d 00 	vmovdqa 0xd33(%rip),%ymm3        # 2040 <_fini+0x67c>
+    130c:	00 
+    130d:	31 f6                	xor    %esi,%esi
+    130f:	c4 e3 65 4c c9 20    	vpblendvb %ymm2,%ymm1,%ymm3,%ymm1
+    1315:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    131c:	00 00 00 00 
+    1320:	48 83 fe 40          	cmp    $0x40,%rsi
+    1324:	74 29                	je     134f <main+0x12f>
+    1326:	89 f0                	mov    %esi,%eax
+    1328:	c5 fc 29 84 24 a0 00 	vmovaps %ymm0,0xa0(%rsp)
+    132f:	00 00 
+    1331:	c5 fd 7f 8c 24 c0 00 	vmovdqa %ymm1,0xc0(%rsp)
+    1338:	00 00 
+    133a:	48 ff c6             	inc    %rsi
+    133d:	83 e0 3f             	and    $0x3f,%eax
+    1340:	80 bc 04 a0 00 00 00 	cmpb   $0x3e,0xa0(%rsp,%rax,1)
+    1347:	3e 
+    1348:	75 d6                	jne    1320 <main+0x100>
+    134a:	48 ff ce             	dec    %rsi
+    134d:	eb 07                	jmp    1356 <main+0x136>
+    134f:	48 c7 c6 ff ff ff ff 	mov    $0xffffffffffffffff,%rsi
+    1356:	48 8d 05 23 0d 00 00 	lea    0xd23(%rip),%rax        # 2080 <static_string_d5d98b616c5845a3>
+    135d:	48 b9 00 00 00 00 00 	movabs $0x2000000000000000,%rcx
+    1364:	00 00 20 
+    1367:	48 c7 44 24 10 0d 00 	movq   $0xd,0x10(%rsp)
+    136e:	00 00 
+    1370:	48 8d 15 f9 0c 00 00 	lea    0xcf9(%rip),%rdx        # 2070 <static_string_a8d4ace0dc8d360e>
+    1377:	4c 8d 05 e2 0c 00 00 	lea    0xce2(%rip),%r8        # 2060 <static_string_bbe01a6a523daf15>
+    137e:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+    1383:	41 b9 01 00 00 00    	mov    $0x1,%r9d
+    1389:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    138e:	48 89 4c 24 18       	mov    %rcx,0x18(%rsp)
+    1393:	b9 01 00 00 00       	mov    $0x1,%ecx
+    1398:	6a 01                	push   $0x1
+    139a:	6a 00                	push   $0x0
+    139c:	c5 f8 77             	vzeroupper
+    139f:	e8 2c 05 00 00       	call   18d0 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::int::Int">>, index]]>
+    13a4:	48 83 c4 10          	add    $0x10,%rsp
+    13a8:	f6 44 24 1f 40       	testb  $0x40,0x1f(%rsp)
+    13ad:	74 15                	je     13c4 <main+0x1a4>
+    13af:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    13b4:	f0 48 ff 4f f8       	lock decq -0x8(%rdi)
+    13b9:	75 09                	jne    13c4 <main+0x1a4>
+    13bb:	48 83 c7 f8          	add    $0xfffffffffffffff8,%rdi
+    13bf:	e8 fc fc ff ff       	call   10c0 <KGEN_CompilerRT_AlignedFree@plt>
+    13c4:	e8 e7 fc ff ff       	call   10b0 <KGEN_CompilerRT_DestroyGlobals@plt>
+    13c9:	31 c0                	xor    %eax,%eax
+    13cb:	48 8d 65 f0          	lea    -0x10(%rbp),%rsp
+    13cf:	5b                   	pop    %rbx
+    13d0:	41 5e                	pop    %r14
+    13d2:	5d                   	pop    %rbp
+    13d3:	c3                   	ret
+    13d4:	66 66 66 2e 0f 1f 84 	data16 data16 cs nopw 0x0(%rax,%rax,1)
+    13db:	00 00 00 00 00 
+
+00000000000013e0 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]>:
+    13e0:	41 57                	push   %r15
+    13e2:	41 56                	push   %r14
+    13e4:	41 55                	push   %r13
+    13e6:	41 54                	push   %r12
+    13e8:	53                   	push   %rbx
+    13e9:	48 83 ec 50          	sub    $0x50,%rsp
+    13ed:	48 89 f3             	mov    %rsi,%rbx
+    13f0:	49 89 ff             	mov    %rdi,%r15
+    13f3:	48 85 ff             	test   %rdi,%rdi
+    13f6:	78 45                	js     143d <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x5d>
+    13f8:	4c 8b b3 00 10 00 00 	mov    0x1000(%rbx),%r14
+    13ff:	49 81 fe 00 10 00 00 	cmp    $0x1000,%r14
+    1406:	0f 8e 19 01 00 00    	jle    1525 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x145>
+    140c:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    1413:	48 89 de             	mov    %rbx,%rsi
+    1416:	4c 89 f2             	mov    %r14,%rdx
+    1419:	48 8b 38             	mov    (%rax),%rdi
+    141c:	e8 af fc ff ff       	call   10d0 <write@plt>
+    1421:	45 31 f6             	xor    %r14d,%r14d
+    1424:	48 c7 83 00 10 00 00 	movq   $0x0,0x1000(%rbx)
+    142b:	00 00 00 00 
+    142f:	4d 85 ff             	test   %r15,%r15
+    1432:	0f 85 f6 00 00 00    	jne    152e <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x14e>
+    1438:	e9 75 02 00 00       	jmp    16b2 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x2d2>
+    143d:	48 8b 93 00 10 00 00 	mov    0x1000(%rbx),%rdx
+    1444:	48 8d 42 01          	lea    0x1(%rdx),%rax
+    1448:	48 3d 01 10 00 00    	cmp    $0x1001,%rax
+    144e:	7c 1f                	jl     146f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x8f>
+    1450:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    1457:	48 89 de             	mov    %rbx,%rsi
+    145a:	48 8b 38             	mov    (%rax),%rdi
+    145d:	e8 6e fc ff ff       	call   10d0 <write@plt>
+    1462:	31 d2                	xor    %edx,%edx
+    1464:	48 c7 83 00 10 00 00 	movq   $0x0,0x1000(%rbx)
+    146b:	00 00 00 00 
+    146f:	c6 04 13 2d          	movb   $0x2d,(%rbx,%rdx,1)
+    1473:	4c 8b b3 00 10 00 00 	mov    0x1000(%rbx),%r14
+    147a:	49 ff c6             	inc    %r14
+    147d:	4c 89 b3 00 10 00 00 	mov    %r14,0x1000(%rbx)
+    1484:	49 81 fe 01 10 00 00 	cmp    $0x1001,%r14
+    148b:	7c 23                	jl     14b0 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0xd0>
+    148d:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    1494:	48 89 de             	mov    %rbx,%rsi
+    1497:	4c 89 f2             	mov    %r14,%rdx
+    149a:	48 8b 38             	mov    (%rax),%rdi
+    149d:	e8 2e fc ff ff       	call   10d0 <write@plt>
+    14a2:	45 31 f6             	xor    %r14d,%r14d
+    14a5:	48 c7 83 00 10 00 00 	movq   $0x0,0x1000(%rbx)
+    14ac:	00 00 00 00 
+    14b0:	b9 3f 00 00 00       	mov    $0x3f,%ecx
+    14b5:	48 be 99 99 99 99 99 	movabs $0x9999999999999999,%rsi
+    14bc:	99 99 99 
+    14bf:	48 8d 3d da 0b 00 00 	lea    0xbda(%rip),%rdi        # 20a0 <static_string_978d8d34847e5196>
+    14c6:	c6 44 24 4f 00       	movb   $0x0,0x4f(%rsp)
+    14cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    14d0:	4c 89 f8             	mov    %r15,%rax
+    14d3:	48 f7 ee             	imul   %rsi
+    14d6:	48 89 d0             	mov    %rdx,%rax
+    14d9:	48 c1 fa 02          	sar    $0x2,%rdx
+    14dd:	48 c1 e8 3f          	shr    $0x3f,%rax
+    14e1:	48 01 c2             	add    %rax,%rdx
+    14e4:	4d 85 ff             	test   %r15,%r15
+    14e7:	48 8d 04 12          	lea    (%rdx,%rdx,1),%rax
+    14eb:	41 0f 99 c0          	setns  %r8b
+    14ef:	48 8d 04 80          	lea    (%rax,%rax,4),%rax
+    14f3:	4c 01 f8             	add    %r15,%rax
+    14f6:	41 0f 95 c1          	setne  %r9b
+    14fa:	4c 8d 50 f6          	lea    -0xa(%rax),%r10
+    14fe:	45 20 c1             	and    %r8b,%r9b
+    1501:	4c 0f 44 d0          	cmove  %rax,%r10
+    1505:	45 0f b6 f9          	movzbl %r9b,%r15d
+    1509:	4c 89 d0             	mov    %r10,%rax
+    150c:	48 f7 d8             	neg    %rax
+    150f:	49 0f 48 c2          	cmovs  %r10,%rax
+    1513:	0f b6 04 38          	movzbl (%rax,%rdi,1),%eax
+    1517:	88 44 0c 0f          	mov    %al,0xf(%rsp,%rcx,1)
+    151b:	48 ff c9             	dec    %rcx
+    151e:	49 29 d7             	sub    %rdx,%r15
+    1521:	75 ad                	jne    14d0 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0xf0>
+    1523:	eb 5b                	jmp    1580 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x1a0>
+    1525:	4d 85 ff             	test   %r15,%r15
+    1528:	0f 84 56 01 00 00    	je     1684 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x2a4>
+    152e:	b9 3f 00 00 00       	mov    $0x3f,%ecx
+    1533:	48 b8 cd cc cc cc cc 	movabs $0xcccccccccccccccd,%rax
+    153a:	cc cc cc 
+    153d:	48 8d 35 5c 0b 00 00 	lea    0xb5c(%rip),%rsi        # 20a0 <static_string_978d8d34847e5196>
+    1544:	c6 44 24 4f 00       	movb   $0x0,0x4f(%rsp)
+    1549:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1550:	4c 89 fa             	mov    %r15,%rdx
+    1553:	49 89 f0             	mov    %rsi,%r8
+    1556:	c4 e2 eb f6 d0       	mulx   %rax,%rdx,%rdx
+    155b:	48 c1 ea 03          	shr    $0x3,%rdx
+    155f:	48 8d 3c 12          	lea    (%rdx,%rdx,1),%rdi
+    1563:	48 8d 3c bf          	lea    (%rdi,%rdi,4),%rdi
+    1567:	49 29 f8             	sub    %rdi,%r8
+    156a:	43 0f b6 3c 38       	movzbl (%r8,%r15,1),%edi
+    156f:	40 88 7c 0c 0f       	mov    %dil,0xf(%rsp,%rcx,1)
+    1574:	48 ff c9             	dec    %rcx
+    1577:	49 83 ff 0a          	cmp    $0xa,%r15
+    157b:	49 89 d7             	mov    %rdx,%r15
+    157e:	73 d0                	jae    1550 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x170>
+    1580:	48 8d 41 01          	lea    0x1(%rcx),%rax
+    1584:	48 83 c1 42          	add    $0x42,%rcx
+    1588:	41 bd 41 00 00 00    	mov    $0x41,%r13d
+    158e:	41 bf 40 00 00 00    	mov    $0x40,%r15d
+    1594:	48 89 ca             	mov    %rcx,%rdx
+    1597:	48 c1 fa 3f          	sar    $0x3f,%rdx
+    159b:	c4 e2 e8 f2 c9       	andn   %rcx,%rdx,%rcx
+    15a0:	48 83 f8 41          	cmp    $0x41,%rax
+    15a4:	4c 0f 4c e8          	cmovl  %rax,%r13
+    15a8:	48 85 c0             	test   %rax,%rax
+    15ab:	4c 0f 48 e9          	cmovs  %rcx,%r13
+    15af:	4e 8d 64 2c 0f       	lea    0xf(%rsp,%r13,1),%r12
+    15b4:	4d 29 ef             	sub    %r13,%r15
+    15b7:	49 81 ff 01 10 00 00 	cmp    $0x1001,%r15
+    15be:	7c 3a                	jl     15fa <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x21a>
+    15c0:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    15c7:	48 89 de             	mov    %rbx,%rsi
+    15ca:	4c 89 f2             	mov    %r14,%rdx
+    15cd:	48 8b 38             	mov    (%rax),%rdi
+    15d0:	e8 fb fa ff ff       	call   10d0 <write@plt>
+    15d5:	48 c7 83 00 10 00 00 	movq   $0x0,0x1000(%rbx)
+    15dc:	00 00 00 00 
+    15e0:	4c 89 e6             	mov    %r12,%rsi
+    15e3:	4c 89 fa             	mov    %r15,%rdx
+    15e6:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    15ed:	48 8b 38             	mov    (%rax),%rdi
+    15f0:	e8 db fa ff ff       	call   10d0 <write@plt>
+    15f5:	e9 c4 00 00 00       	jmp    16be <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x2de>
+    15fa:	4b 8d 04 37          	lea    (%r15,%r14,1),%rax
+    15fe:	48 3d 01 10 00 00    	cmp    $0x1001,%rax
+    1604:	7c 23                	jl     1629 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x249>
+    1606:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    160d:	48 89 de             	mov    %rbx,%rsi
+    1610:	4c 89 f2             	mov    %r14,%rdx
+    1613:	48 8b 38             	mov    (%rax),%rdi
+    1616:	e8 b5 fa ff ff       	call   10d0 <write@plt>
+    161b:	45 31 f6             	xor    %r14d,%r14d
+    161e:	48 c7 83 00 10 00 00 	movq   $0x0,0x1000(%rbx)
+    1625:	00 00 00 00 
+    1629:	49 83 fd 40          	cmp    $0x40,%r13
+    162d:	75 0c                	jne    163b <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x25b>
+    162f:	4c 01 bb 00 10 00 00 	add    %r15,0x1000(%rbx)
+    1636:	e9 83 00 00 00       	jmp    16be <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x2de>
+    163b:	49 01 de             	add    %rbx,%r14
+    163e:	49 83 ff 04          	cmp    $0x4,%r15
+    1642:	0f 8f 84 00 00 00    	jg     16cc <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x2ec>
+    1648:	41 0f b6 0c 24       	movzbl (%r12),%ecx
+    164d:	0f b6 54 24 4e       	movzbl 0x4e(%rsp),%edx
+    1652:	b8 3f 00 00 00       	mov    $0x3f,%eax
+    1657:	4c 29 e8             	sub    %r13,%rax
+    165a:	41 88 0e             	mov    %cl,(%r14)
+    165d:	41 88 14 06          	mov    %dl,(%r14,%rax,1)
+    1661:	49 83 ff 03          	cmp    $0x3,%r15
+    1665:	7c c8                	jl     162f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x24f>
+    1667:	41 0f b6 4c 24 01    	movzbl 0x1(%r12),%ecx
+    166d:	0f b6 54 24 4d       	movzbl 0x4d(%rsp),%edx
+    1672:	b8 3e 00 00 00       	mov    $0x3e,%eax
+    1677:	4c 29 e8             	sub    %r13,%rax
+    167a:	41 88 4e 01          	mov    %cl,0x1(%r14)
+    167e:	41 88 14 06          	mov    %dl,(%r14,%rax,1)
+    1682:	eb ab                	jmp    162f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x24f>
+    1684:	49 81 fe 00 10 00 00 	cmp    $0x1000,%r14
+    168b:	75 25                	jne    16b2 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x2d2>
+    168d:	48 8b 83 08 10 00 00 	mov    0x1008(%rbx),%rax
+    1694:	ba 00 10 00 00       	mov    $0x1000,%edx
+    1699:	48 89 de             	mov    %rbx,%rsi
+    169c:	48 8b 38             	mov    (%rax),%rdi
+    169f:	e8 2c fa ff ff       	call   10d0 <write@plt>
+    16a4:	45 31 f6             	xor    %r14d,%r14d
+    16a7:	48 c7 83 00 10 00 00 	movq   $0x0,0x1000(%rbx)
+    16ae:	00 00 00 00 
+    16b2:	42 c6 04 33 30       	movb   $0x30,(%rbx,%r14,1)
+    16b7:	48 ff 83 00 10 00 00 	incq   0x1000(%rbx)
+    16be:	48 83 c4 50          	add    $0x50,%rsp
+    16c2:	5b                   	pop    %rbx
+    16c3:	41 5c                	pop    %r12
+    16c5:	41 5d                	pop    %r13
+    16c7:	41 5e                	pop    %r14
+    16c9:	41 5f                	pop    %r15
+    16cb:	c3                   	ret
+    16cc:	49 83 ff 10          	cmp    $0x10,%r15
+    16d0:	7f 1c                	jg     16ee <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x30e>
+    16d2:	49 83 ff 08          	cmp    $0x8,%r15
+    16d6:	7c 58                	jl     1730 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x350>
+    16d8:	49 8b 04 24          	mov    (%r12),%rax
+    16dc:	48 8b 4c 24 47       	mov    0x47(%rsp),%rcx
+    16e1:	49 89 06             	mov    %rax,(%r14)
+    16e4:	4b 89 4c 3e f8       	mov    %rcx,-0x8(%r14,%r15,1)
+    16e9:	e9 41 ff ff ff       	jmp    162f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x24f>
+    16ee:	49 bd e0 ff ff ff ff 	movabs $0x7fffffffffffffe0,%r13
+    16f5:	ff ff 7f 
+    16f8:	4d 21 fd             	and    %r15,%r13
+    16fb:	74 0e                	je     170b <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x32b>
+    16fd:	4c 89 f7             	mov    %r14,%rdi
+    1700:	4c 89 e6             	mov    %r12,%rsi
+    1703:	4c 89 ea             	mov    %r13,%rdx
+    1706:	e8 35 f9 ff ff       	call   1040 <memcpy@plt>
+    170b:	4d 39 fd             	cmp    %r15,%r13
+    170e:	0f 84 1b ff ff ff    	je     162f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x24f>
+    1714:	44 89 fa             	mov    %r15d,%edx
+    1717:	4d 01 ee             	add    %r13,%r14
+    171a:	4d 01 ec             	add    %r13,%r12
+    171d:	83 e2 1f             	and    $0x1f,%edx
+    1720:	4c 89 f7             	mov    %r14,%rdi
+    1723:	4c 89 e6             	mov    %r12,%rsi
+    1726:	e8 15 f9 ff ff       	call   1040 <memcpy@plt>
+    172b:	e9 ff fe ff ff       	jmp    162f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x24f>
+    1730:	41 8b 04 24          	mov    (%r12),%eax
+    1734:	8b 4c 24 4b          	mov    0x4b(%rsp),%ecx
+    1738:	41 89 06             	mov    %eax,(%r14)
+    173b:	43 89 4c 3e fc       	mov    %ecx,-0x4(%r14,%r15,1)
+    1740:	e9 ea fe ff ff       	jmp    162f <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]+0x24f>
+    1745:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    174c:	00 00 00 00 
+
+0000000000001750 <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false>:
+    1750:	41 57                	push   %r15
+    1752:	41 56                	push   %r14
+    1754:	41 55                	push   %r13
+    1756:	41 54                	push   %r12
+    1758:	53                   	push   %rbx
+    1759:	48 89 d3             	mov    %rdx,%rbx
+    175c:	49 89 f7             	mov    %rsi,%r15
+    175f:	49 89 fe             	mov    %rdi,%r14
+    1762:	48 81 fa 01 10 00 00 	cmp    $0x1001,%rdx
+    1769:	7c 42                	jl     17ad <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x5d>
+    176b:	49 8b 86 08 10 00 00 	mov    0x1008(%r14),%rax
+    1772:	49 8b 96 00 10 00 00 	mov    0x1000(%r14),%rdx
+    1779:	4c 89 f6             	mov    %r14,%rsi
+    177c:	48 8b 38             	mov    (%rax),%rdi
+    177f:	e8 4c f9 ff ff       	call   10d0 <write@plt>
+    1784:	49 c7 86 00 10 00 00 	movq   $0x0,0x1000(%r14)
+    178b:	00 00 00 00 
+    178f:	4c 89 fe             	mov    %r15,%rsi
+    1792:	48 89 da             	mov    %rbx,%rdx
+    1795:	49 8b 86 08 10 00 00 	mov    0x1008(%r14),%rax
+    179c:	48 8b 38             	mov    (%rax),%rdi
+    179f:	5b                   	pop    %rbx
+    17a0:	41 5c                	pop    %r12
+    17a2:	41 5d                	pop    %r13
+    17a4:	41 5e                	pop    %r14
+    17a6:	41 5f                	pop    %r15
+    17a8:	e9 23 f9 ff ff       	jmp    10d0 <write@plt>
+    17ad:	49 8b 96 00 10 00 00 	mov    0x1000(%r14),%rdx
+    17b4:	48 8d 04 1a          	lea    (%rdx,%rbx,1),%rax
+    17b8:	48 3d 01 10 00 00    	cmp    $0x1001,%rax
+    17be:	7c 1f                	jl     17df <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x8f>
+    17c0:	49 8b 86 08 10 00 00 	mov    0x1008(%r14),%rax
+    17c7:	4c 89 f6             	mov    %r14,%rsi
+    17ca:	48 8b 38             	mov    (%rax),%rdi
+    17cd:	e8 fe f8 ff ff       	call   10d0 <write@plt>
+    17d2:	31 d2                	xor    %edx,%edx
+    17d4:	49 c7 86 00 10 00 00 	movq   $0x0,0x1000(%r14)
+    17db:	00 00 00 00 
+    17df:	48 85 db             	test   %rbx,%rbx
+    17e2:	0f 84 a6 00 00 00    	je     188e <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x13e>
+    17e8:	4c 01 f2             	add    %r14,%rdx
+    17eb:	48 83 fb 04          	cmp    $0x4,%rbx
+    17ef:	7f 2e                	jg     181f <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0xcf>
+    17f1:	41 0f b6 07          	movzbl (%r15),%eax
+    17f5:	88 02                	mov    %al,(%rdx)
+    17f7:	41 0f b6 44 1f ff    	movzbl -0x1(%r15,%rbx,1),%eax
+    17fd:	88 44 1a ff          	mov    %al,-0x1(%rdx,%rbx,1)
+    1801:	48 83 fb 03          	cmp    $0x3,%rbx
+    1805:	0f 8c 83 00 00 00    	jl     188e <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x13e>
+    180b:	41 0f b6 47 01       	movzbl 0x1(%r15),%eax
+    1810:	88 42 01             	mov    %al,0x1(%rdx)
+    1813:	41 0f b6 44 1f fe    	movzbl -0x2(%r15,%rbx,1),%eax
+    1819:	88 44 1a fe          	mov    %al,-0x2(%rdx,%rbx,1)
+    181d:	eb 6f                	jmp    188e <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x13e>
+    181f:	48 83 fb 10          	cmp    $0x10,%rbx
+    1823:	7f 18                	jg     183d <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0xed>
+    1825:	48 83 fb 08          	cmp    $0x8,%rbx
+    1829:	7c 55                	jl     1880 <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x130>
+    182b:	49 8b 07             	mov    (%r15),%rax
+    182e:	48 89 02             	mov    %rax,(%rdx)
+    1831:	49 8b 44 1f f8       	mov    -0x8(%r15,%rbx,1),%rax
+    1836:	48 89 44 1a f8       	mov    %rax,-0x8(%rdx,%rbx,1)
+    183b:	eb 51                	jmp    188e <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x13e>
+    183d:	49 bc e0 ff ff ff ff 	movabs $0x7fffffffffffffe0,%r12
+    1844:	ff ff 7f 
+    1847:	49 21 dc             	and    %rbx,%r12
+    184a:	74 14                	je     1860 <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x110>
+    184c:	48 89 d7             	mov    %rdx,%rdi
+    184f:	49 89 d5             	mov    %rdx,%r13
+    1852:	4c 89 fe             	mov    %r15,%rsi
+    1855:	4c 89 e2             	mov    %r12,%rdx
+    1858:	e8 e3 f7 ff ff       	call   1040 <memcpy@plt>
+    185d:	4c 89 ea             	mov    %r13,%rdx
+    1860:	49 39 dc             	cmp    %rbx,%r12
+    1863:	74 29                	je     188e <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x13e>
+    1865:	89 d8                	mov    %ebx,%eax
+    1867:	4c 01 e2             	add    %r12,%rdx
+    186a:	4d 01 e7             	add    %r12,%r15
+    186d:	83 e0 1f             	and    $0x1f,%eax
+    1870:	48 89 d7             	mov    %rdx,%rdi
+    1873:	4c 89 fe             	mov    %r15,%rsi
+    1876:	48 89 c2             	mov    %rax,%rdx
+    1879:	e8 c2 f7 ff ff       	call   1040 <memcpy@plt>
+    187e:	eb 0e                	jmp    188e <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false+0x13e>
+    1880:	41 8b 07             	mov    (%r15),%eax
+    1883:	89 02                	mov    %eax,(%rdx)
+    1885:	41 8b 44 1f fc       	mov    -0x4(%r15,%rbx,1),%eax
+    188a:	89 44 1a fc          	mov    %eax,-0x4(%rdx,%rbx,1)
+    188e:	49 01 9e 00 10 00 00 	add    %rbx,0x1000(%r14)
+    1895:	5b                   	pop    %rbx
+    1896:	41 5c                	pop    %r12
+    1898:	41 5d                	pop    %r13
+    189a:	41 5e                	pop    %r14
+    189c:	41 5f                	pop    %r15
+    189e:	c3                   	ret
+    189f:	90                   	nop
+
+00000000000018a0 <std::io::io::_flush(::FileDescriptor)>:
+    18a0:	53                   	push   %rbx
+    18a1:	e8 5a f8 ff ff       	call   1100 <dup@plt>
+    18a6:	48 8d 35 23 08 00 00 	lea    0x823(%rip),%rsi        # 20d0 <static_string_0d78baac08237ddb>
+    18ad:	89 c7                	mov    %eax,%edi
+    18af:	e8 7c f7 ff ff       	call   1030 <fdopen@plt>
+    18b4:	48 89 c7             	mov    %rax,%rdi
+    18b7:	48 89 c3             	mov    %rax,%rbx
+    18ba:	e8 d1 f7 ff ff       	call   1090 <fflush@plt>
+    18bf:	48 89 df             	mov    %rbx,%rdi
+    18c2:	5b                   	pop    %rbx
+    18c3:	e9 a8 f7 ff ff       	jmp    1070 <fclose@plt>
+    18c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    18cf:	00 
+
+00000000000018d0 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::int::Int">>, index]]>:
+    18d0:	55                   	push   %rbp
+    18d1:	41 57                	push   %r15
+    18d3:	41 56                	push   %r14
+    18d5:	41 55                	push   %r13
+    18d7:	41 54                	push   %r12
+    18d9:	53                   	push   %rbx
+    18da:	48 81 ec 28 10 00 00 	sub    $0x1028,%rsp
+    18e1:	0f b6 84 24 60 10 00 	movzbl 0x1060(%rsp),%eax
+    18e8:	00 
+    18e9:	49 89 cc             	mov    %rcx,%r12
+    18ec:	48 8d 4c 24 10       	lea    0x10(%rsp),%rcx
+    18f1:	49 89 f7             	mov    %rsi,%r15
+    18f4:	4c 89 cb             	mov    %r9,%rbx
+    18f7:	4d 89 c6             	mov    %r8,%r14
+    18fa:	49 89 d5             	mov    %rdx,%r13
+    18fd:	48 89 fe             	mov    %rdi,%rsi
+    1900:	88 44 24 0f          	mov    %al,0xf(%rsp)
+    1904:	48 8b 84 24 68 10 00 	mov    0x1068(%rsp),%rax
+    190b:	00 
+    190c:	48 c7 84 24 18 10 00 	movq   $0x0,0x1018(%rsp)
+    1913:	00 00 00 00 00 
+    1918:	48 89 8c 24 20 10 00 	mov    %rcx,0x1020(%rsp)
+    191f:	00 
+    1920:	48 89 44 24 10       	mov    %rax,0x10(%rsp)
+    1925:	48 8b 47 10          	mov    0x10(%rdi),%rax
+    1929:	48 85 c0             	test   %rax,%rax
+    192c:	78 09                	js     1937 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::int::Int">>, index]]+0x67>
+    192e:	48 8b 56 08          	mov    0x8(%rsi),%rdx
+    1932:	48 8b 36             	mov    (%rsi),%rsi
+    1935:	eb 0a                	jmp    1941 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::int::Int">>, index]]+0x71>
+    1937:	b9 38 05 00 00       	mov    $0x538,%ecx
+    193c:	c4 e2 f0 f7 d0       	bextr  %rcx,%rax,%rdx
+    1941:	48 8d 6c 24 18       	lea    0x18(%rsp),%rbp
+    1946:	48 89 ef             	mov    %rbp,%rdi
+    1949:	e8 02 fe ff ff       	call   1750 <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false>
+    194e:	48 89 ef             	mov    %rbp,%rdi
+    1951:	4c 89 ee             	mov    %r13,%rsi
+    1954:	4c 89 e2             	mov    %r12,%rdx
+    1957:	e8 f4 fd ff ff       	call   1750 <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false>
+    195c:	4c 89 ff             	mov    %r15,%rdi
+    195f:	48 89 ee             	mov    %rbp,%rsi
+    1962:	e8 79 fa ff ff       	call   13e0 <std::builtin::simd::SIMD::write_to[::Writer](::SIMD[$0, $1],$2&),dtype=si64,size=1,writer.T`2x=[typevalue<#kgen.instref<^["std::format::_utils::_WriteBufferStack,origin._mlir_origin`={  },origin={  },W=[typevalue<#kgen.instref<\1B\22std::io::file_descriptor::FileDescriptor\22>>, index],stack_buffer_bytes=4096">>, struct<(struct<(array<4096, scalar<ui8>>) memoryOnly>, index, pointer<index>) memoryOnly>]>
+    1967:	48 89 ef             	mov    %rbp,%rdi
+    196a:	4c 89 f6             	mov    %r14,%rsi
+    196d:	48 89 da             	mov    %rbx,%rdx
+    1970:	e8 db fd ff ff       	call   1750 <std::format::_utils::_WriteBufferStack::write_string[::Bool,LITOrigin[$4._mlir_value],::Origin[$4, $5]](::_WriteBufferStack[$0, $1, $2, $3]&,::StringSlice[$4, $5, $6]),W=[typevalue<#kgen.instref<^["std::io::file_descriptor::FileDescriptor">>, index],stack_buffer_bytes=4096,string.mut`2x1=false>
+    1975:	48 8b 84 24 20 10 00 	mov    0x1020(%rsp),%rax
+    197c:	00 
+    197d:	48 8b 94 24 18 10 00 	mov    0x1018(%rsp),%rdx
+    1984:	00 
+    1985:	48 89 ee             	mov    %rbp,%rsi
+    1988:	48 8b 38             	mov    (%rax),%rdi
+    198b:	e8 40 f7 ff ff       	call   10d0 <write@plt>
+    1990:	f6 44 24 0f 01       	testb  $0x1,0xf(%rsp)
+    1995:	74 1b                	je     19b2 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::int::Int">>, index]]+0xe2>
+    1997:	48 8b 7c 24 10       	mov    0x10(%rsp),%rdi
+    199c:	48 81 c4 28 10 00 00 	add    $0x1028,%rsp
+    19a3:	5b                   	pop    %rbx
+    19a4:	41 5c                	pop    %r12
+    19a6:	41 5d                	pop    %r13
+    19a8:	41 5e                	pop    %r14
+    19aa:	41 5f                	pop    %r15
+    19ac:	5d                   	pop    %rbp
+    19ad:	e9 ee fe ff ff       	jmp    18a0 <std::io::io::_flush(::FileDescriptor)>
+    19b2:	48 81 c4 28 10 00 00 	add    $0x1028,%rsp
+    19b9:	5b                   	pop    %rbx
+    19ba:	41 5c                	pop    %r12
+    19bc:	41 5d                	pop    %r13
+    19be:	41 5e                	pop    %r14
+    19c0:	41 5f                	pop    %r15
+    19c2:	5d                   	pop    %rbp
+    19c3:	c3                   	ret
+
+Disassembly of section .fini:
+
+00000000000019c4 <_fini>:
+    19c4:	f3 0f 1e fa          	endbr64
+    19c8:	48 83 ec 08          	sub    $0x8,%rsp
+    19cc:	48 83 c4 08          	add    $0x8,%rsp
+    19d0:	c3                   	ret

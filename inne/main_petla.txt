@@ -1,0 +1,109 @@
+0000000000001220 <main>:
+    1220:	55                   	push   %rbp
+    1221:	48 89 e5             	mov    %rsp,%rbp
+    1224:	41 56                	push   %r14
+    1226:	53                   	push   %rbx
+    1227:	48 83 e4 e0          	and    $0xffffffffffffffe0,%rsp
+    122b:	48 81 ec e0 00 00 00 	sub    $0xe0,%rsp
+    1232:	48 89 f3             	mov    %rsi,%rbx
+    1235:	41 89 fe             	mov    %edi,%r14d
+    1238:	e8 43 fe ff ff       	call   1080 <KGEN_CompilerRT_AsyncRT_GetCurrentCPUDevice@plt>
+    123d:	48 85 c0             	test   %rax,%rax
+    1240:	75 1f                	jne    1261 <main+0x41>
+    1242:	48 8d 15 c7 ff ff ff 	lea    -0x39(%rip),%rdx        # 1210 <main_closure_0>
+    1249:	48 8d 0d c8 ff ff ff 	lea    -0x38(%rip),%rcx        # 1218 <main_closure_1>
+    1250:	48 8d 3d 39 0e 00 00 	lea    0xe39(%rip),%rdi        # 2090 <static_string_a61c3395ab9379d9>
+    1257:	be 07 00 00 00       	mov    $0x7,%esi
+    125c:	e8 ef fd ff ff       	call   1050 <KGEN_CompilerRT_GetOrCreateGlobal@plt>
+    1261:	44 89 f7             	mov    %r14d,%edi
+    1264:	48 89 de             	mov    %rbx,%rsi
+    1267:	e8 f4 fd ff ff       	call   1060 <KGEN_CompilerRT_SetArgV@plt>
+    126c:	e8 2f fe ff ff       	call   10a0 <KGEN_CompilerRT_PrintStackTraceOnFault@plt>
+    1271:	c5 fc 28 05 87 0d 00 	vmovaps 0xd87(%rip),%ymm0        # 2000 <_fini+0x63c>
+    1278:	00 
+    1279:	c5 f1 ef c9          	vpxor  %xmm1,%xmm1,%xmm1
+    127d:	b8 08 00 00 00       	mov    $0x8,%eax
+    1282:	66 66 66 66 66 2e 0f 	data16 data16 data16 data16 cs nopw 0x0(%rax,%rax,1)
+    1289:	1f 84 00 00 00 00 00 
+    1290:	48 8d 48 01          	lea    0x1(%rax),%rcx
+    1294:	83 e0 3f             	and    $0x3f,%eax
+    1297:	c5 fc 29 44 24 60    	vmovaps %ymm0,0x60(%rsp)
+    129d:	c5 fd 7f 8c 24 80 00 	vmovdqa %ymm1,0x80(%rsp)
+    12a4:	00 00 
+    12a6:	c6 44 04 60 fe       	movb   $0xfe,0x60(%rsp,%rax,1)
+    12ab:	48 89 c8             	mov    %rcx,%rax
+    12ae:	c5 fc 28 44 24 60    	vmovaps 0x60(%rsp),%ymm0
+    12b4:	c5 fd 6f 8c 24 80 00 	vmovdqa 0x80(%rsp),%ymm1
+    12bb:	00 00 
+    12bd:	48 83 f9 10          	cmp    $0x10,%rcx
+    12c1:	75 cd                	jne    1290 <main+0x70>
+    12c3:	b8 30 00 00 00       	mov    $0x30,%eax
+    12c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    12cf:	00 
+    12d0:	48 8d 48 01          	lea    0x1(%rax),%rcx
+    12d4:	83 e0 3f             	and    $0x3f,%eax
+    12d7:	c5 fc 29 44 24 20    	vmovaps %ymm0,0x20(%rsp)
+    12dd:	c5 fd 7f 4c 24 40    	vmovdqa %ymm1,0x40(%rsp)
+    12e3:	c6 44 04 20 00       	movb   $0x0,0x20(%rsp,%rax,1)
+    12e8:	48 89 c8             	mov    %rcx,%rax
+    12eb:	c5 fc 28 44 24 20    	vmovaps 0x20(%rsp),%ymm0
+    12f1:	c5 fd 6f 4c 24 40    	vmovdqa 0x40(%rsp),%ymm1
+    12f7:	48 83 f9 38          	cmp    $0x38,%rcx
+    12fb:	75 d3                	jne    12d0 <main+0xb0>
+    12fd:	c5 fd 6f 15 1b 0d 00 	vmovdqa 0xd1b(%rip),%ymm2        # 2020 <_fini+0x65c>
+    1304:	00 
+    1305:	c5 fd 6f 1d 33 0d 00 	vmovdqa 0xd33(%rip),%ymm3        # 2040 <_fini+0x67c>
+    130c:	00 
+    130d:	31 f6                	xor    %esi,%esi
+    130f:	c4 e3 65 4c c9 20    	vpblendvb %ymm2,%ymm1,%ymm3,%ymm1
+    1315:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    131c:	00 00 00 00 
+    1320:	48 83 fe 40          	cmp    $0x40,%rsi
+    1324:	74 29                	je     134f <main+0x12f>
+    1326:	89 f0                	mov    %esi,%eax
+    1328:	c5 fc 29 84 24 a0 00 	vmovaps %ymm0,0xa0(%rsp)
+    132f:	00 00 
+    1331:	c5 fd 7f 8c 24 c0 00 	vmovdqa %ymm1,0xc0(%rsp)
+    1338:	00 00 
+    133a:	48 ff c6             	inc    %rsi
+    133d:	83 e0 3f             	and    $0x3f,%eax
+    1340:	80 bc 04 a0 00 00 00 	cmpb   $0x3e,0xa0(%rsp,%rax,1)
+    1347:	3e 
+    1348:	75 d6                	jne    1320 <main+0x100>
+    134a:	48 ff ce             	dec    %rsi
+    134d:	eb 07                	jmp    1356 <main+0x136>
+    134f:	48 c7 c6 ff ff ff ff 	mov    $0xffffffffffffffff,%rsi
+    1356:	48 8d 05 23 0d 00 00 	lea    0xd23(%rip),%rax        # 2080 <static_string_d5d98b616c5845a3>
+    135d:	48 b9 00 00 00 00 00 	movabs $0x2000000000000000,%rcx
+    1364:	00 00 20 
+    1367:	48 c7 44 24 10 0d 00 	movq   $0xd,0x10(%rsp)
+    136e:	00 00 
+    1370:	48 8d 15 f9 0c 00 00 	lea    0xcf9(%rip),%rdx        # 2070 <static_string_a8d4ace0dc8d360e>
+    1377:	4c 8d 05 e2 0c 00 00 	lea    0xce2(%rip),%r8        # 2060 <static_string_bbe01a6a523daf15>
+    137e:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+    1383:	41 b9 01 00 00 00    	mov    $0x1,%r9d
+    1389:	48 89 44 24 08       	mov    %rax,0x8(%rsp)
+    138e:	48 89 4c 24 18       	mov    %rcx,0x18(%rsp)
+    1393:	b9 01 00 00 00       	mov    $0x1,%ecx
+    1398:	6a 01                	push   $0x1
+    139a:	6a 00                	push   $0x0
+    139c:	c5 f8 77             	vzeroupper
+    139f:	e8 2c 05 00 00       	call   18d0 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::int::Int">>, index]]>
+    13a4:	48 83 c4 10          	add    $0x10,%rsp
+    13a8:	f6 44 24 1f 40       	testb  $0x40,0x1f(%rsp)
+    13ad:	74 15                	je     13c4 <main+0x1a4>
+    13af:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    13b4:	f0 48 ff 4f f8       	lock decq -0x8(%rdi)
+    13b9:	75 09                	jne    13c4 <main+0x1a4>
+    13bb:	48 83 c7 f8          	add    $0xfffffffffffffff8,%rdi
+    13bf:	e8 fc fc ff ff       	call   10c0 <KGEN_CompilerRT_AlignedFree@plt>
+    13c4:	e8 e7 fc ff ff       	call   10b0 <KGEN_CompilerRT_DestroyGlobals@plt>
+    13c9:	31 c0                	xor    %eax,%eax
+    13cb:	48 8d 65 f0          	lea    -0x10(%rbp),%rsp
+    13cf:	5b                   	pop    %rbx
+    13d0:	41 5e                	pop    %r14
+    13d2:	5d                   	pop    %rbp
+    13d3:	c3                   	ret
+    13d4:	66 66 66 2e 0f 1f 84 	data16 data16 cs nopw 0x0(%rax,%rax,1)
+    13db:	00 00 00 00 00 
+

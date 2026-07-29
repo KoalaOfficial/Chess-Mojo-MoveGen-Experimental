@@ -1,0 +1,200 @@
+0000000000001220 <main>:
+    1220:	55                   	push   %rbp
+    1221:	48 89 e5             	mov    %rsp,%rbp
+    1224:	41 56                	push   %r14
+    1226:	53                   	push   %rbx
+    1227:	48 83 e4 e0          	and    $0xffffffffffffffe0,%rsp
+    122b:	48 81 ec a0 00 00 00 	sub    $0xa0,%rsp
+    1232:	48 89 f3             	mov    %rsi,%rbx
+    1235:	41 89 fe             	mov    %edi,%r14d
+    1238:	e8 43 fe ff ff       	call   1080 <KGEN_CompilerRT_AsyncRT_GetCurrentCPUDevice@plt>
+    123d:	48 85 c0             	test   %rax,%rax
+    1240:	75 1f                	jne    1261 <main+0x41>
+    1242:	48 8d 15 c7 ff ff ff 	lea    -0x39(%rip),%rdx        # 1210 <main_closure_0>
+    1249:	48 8d 0d c8 ff ff ff 	lea    -0x38(%rip),%rcx        # 1218 <main_closure_1>
+    1250:	48 8d 3d 79 10 00 00 	lea    0x1079(%rip),%rdi        # 22d0 <static_string_a61c3395ab9379d9>
+    1257:	be 07 00 00 00       	mov    $0x7,%esi
+    125c:	e8 ef fd ff ff       	call   1050 <KGEN_CompilerRT_GetOrCreateGlobal@plt>
+    1261:	44 89 f7             	mov    %r14d,%edi
+    1264:	48 89 de             	mov    %rbx,%rsi
+    1267:	e8 f4 fd ff ff       	call   1060 <KGEN_CompilerRT_SetArgV@plt>
+    126c:	e8 2f fe ff ff       	call   10a0 <KGEN_CompilerRT_PrintStackTraceOnFault@plt>
+    1271:	c5 fd 6f 0d 87 0d 00 	vmovdqa 0xd87(%rip),%ymm1        # 2000 <_fini+0x57c>
+    1278:	00 
+    1279:	c5 f9 ef c0          	vpxor  %xmm0,%xmm0,%xmm0
+    127d:	b8 08 00 00 00       	mov    $0x8,%eax
+    1282:	66 66 66 66 66 2e 0f 	data16 data16 data16 data16 cs nopw 0x0(%rax,%rax,1)
+    1289:	1f 84 00 00 00 00 00 
+    1290:	48 8d 48 01          	lea    0x1(%rax),%rcx
+    1294:	83 e0 3f             	and    $0x3f,%eax
+    1297:	c5 fd 7f 4c 24 60    	vmovdqa %ymm1,0x60(%rsp)
+    129d:	c5 fd 7f 84 24 80 00 	vmovdqa %ymm0,0x80(%rsp)
+    12a4:	00 00 
+    12a6:	c6 44 04 60 fe       	movb   $0xfe,0x60(%rsp,%rax,1)
+    12ab:	48 89 c8             	mov    %rcx,%rax
+    12ae:	c5 fd 6f 4c 24 60    	vmovdqa 0x60(%rsp),%ymm1
+    12b4:	c5 fd 6f 84 24 80 00 	vmovdqa 0x80(%rsp),%ymm0
+    12bb:	00 00 
+    12bd:	48 83 f9 10          	cmp    $0x10,%rcx
+    12c1:	75 cd                	jne    1290 <main+0x70>
+    12c3:	b8 30 00 00 00       	mov    $0x30,%eax
+    12c8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    12cf:	00 
+    12d0:	48 8d 48 01          	lea    0x1(%rax),%rcx
+    12d4:	83 e0 3f             	and    $0x3f,%eax
+    12d7:	c5 fd 7f 4c 24 20    	vmovdqa %ymm1,0x20(%rsp)
+    12dd:	c5 fd 7f 44 24 40    	vmovdqa %ymm0,0x40(%rsp)
+    12e3:	c6 44 04 20 00       	movb   $0x0,0x20(%rsp,%rax,1)
+    12e8:	48 89 c8             	mov    %rcx,%rax
+    12eb:	c5 fd 6f 4c 24 20    	vmovdqa 0x20(%rsp),%ymm1
+    12f1:	c5 fd 6f 44 24 40    	vmovdqa 0x40(%rsp),%ymm0
+    12f7:	48 83 f9 38          	cmp    $0x38,%rcx
+    12fb:	75 d3                	jne    12d0 <main+0xb0>
+    12fd:	c5 fd 6f 15 1b 0d 00 	vmovdqa 0xd1b(%rip),%ymm2        # 2020 <_fini+0x59c>
+    1304:	00 
+    1305:	c5 fd 6f 1d 33 0d 00 	vmovdqa 0xd33(%rip),%ymm3        # 2040 <_fini+0x5bc>
+    130c:	00 
+    130d:	48 8d 15 ac 0f 00 00 	lea    0xfac(%rip),%rdx        # 22c0 <static_string_d5d98b616c5845a3>
+    1314:	48 b9 00 00 00 00 00 	movabs $0x2000000000000000,%rcx
+    131b:	00 00 20 
+    131e:	48 c7 44 24 10 0d 00 	movq   $0xd,0x10(%rsp)
+    1325:	00 00 
+    1327:	4c 8d 05 72 0f 00 00 	lea    0xf72(%rip),%r8        # 22a0 <static_string_bbe01a6a523daf15>
+    132e:	48 8d 7c 24 08       	lea    0x8(%rsp),%rdi
+    1333:	41 b9 01 00 00 00    	mov    $0x1,%r9d
+    1339:	48 89 54 24 08       	mov    %rdx,0x8(%rsp)
+    133e:	48 89 4c 24 18       	mov    %rcx,0x18(%rsp)
+    1343:	48 8d 15 66 0f 00 00 	lea    0xf66(%rip),%rdx        # 22b0 <static_string_a8d4ace0dc8d360e>
+    134a:	b9 01 00 00 00       	mov    $0x1,%ecx
+    134f:	c4 e3 65 4c c0 20    	vpblendvb %ymm2,%ymm0,%ymm3,%ymm0
+    1355:	c5 fd 6f 15 03 0d 00 	vmovdqa 0xd03(%rip),%ymm2        # 2060 <_fini+0x5dc>
+    135c:	00 
+    135d:	c5 fd 6f 1d 1b 0d 00 	vmovdqa 0xd1b(%rip),%ymm3        # 2080 <_fini+0x5fc>
+    1364:	00 
+    1365:	c5 f5 74 ca          	vpcmpeqb %ymm2,%ymm1,%ymm1
+    1369:	c5 fd 74 c2          	vpcmpeqb %ymm2,%ymm0,%ymm0
+    136d:	c5 f5 db cb          	vpand  %ymm3,%ymm1,%ymm1
+    1371:	c5 fd db c3          	vpand  %ymm3,%ymm0,%ymm0
+    1375:	c4 e2 7d 30 d1       	vpmovzxbw %xmm1,%ymm2
+    137a:	c5 ed d5 15 1e 0d 00 	vpmullw 0xd1e(%rip),%ymm2,%ymm2        # 20a0 <_fini+0x61c>
+    1381:	00 
+    1382:	c5 ed db 15 36 0d 00 	vpand  0xd36(%rip),%ymm2,%ymm2        # 20c0 <_fini+0x63c>
+    1389:	00 
+    138a:	c4 e3 7d 39 d3 01    	vextracti128 $0x1,%ymm2,%xmm3
+    1390:	c5 e9 67 d3          	vpackuswb %xmm3,%xmm2,%xmm2
+    1394:	c5 f9 70 da 55       	vpshufd $0x55,%xmm2,%xmm3
+    1399:	c5 e9 eb d3          	vpor   %xmm3,%xmm2,%xmm2
+    139d:	c5 e1 72 d2 10       	vpsrld $0x10,%xmm2,%xmm3
+    13a2:	c5 e9 eb d3          	vpor   %xmm3,%xmm2,%xmm2
+    13a6:	c5 e1 71 d2 08       	vpsrlw $0x8,%xmm2,%xmm3
+    13ab:	c5 e9 eb d3          	vpor   %xmm3,%xmm2,%xmm2
+    13af:	c4 e3 7d 39 cb 01    	vextracti128 $0x1,%ymm1,%xmm3
+    13b5:	c5 f9 7e d0          	vmovd  %xmm2,%eax
+    13b9:	c5 e9 73 d9 07       	vpsrldq $0x7,%xmm1,%xmm2
+    13be:	c4 e3 fd 00 c9 e9    	vpermq $0xe9,%ymm1,%ymm1
+    13c4:	c4 e3 79 0f e3 07    	vpalignr $0x7,%xmm3,%xmm0,%xmm4
+    13ca:	c4 e3 69 20 d0 00    	vpinsrb $0x0,%eax,%xmm2,%xmm2
+    13d0:	c5 f1 73 f9 01       	vpslldq $0x1,%xmm1,%xmm1
+    13d5:	c4 e3 6d 38 e4 01    	vinserti128 $0x1,%xmm4,%ymm2,%ymm4
+    13db:	c4 e2 7d 32 fa       	vpmovzxbq %xmm2,%ymm7
+    13e0:	c4 e3 5d 02 c9 0c    	vpblendd $0xc,%ymm1,%ymm4,%ymm1
+    13e6:	c4 e2 7d 30 e1       	vpmovzxbw %xmm1,%ymm4
+    13eb:	c4 e3 7d 39 c9 01    	vextracti128 $0x1,%ymm1,%xmm1
+    13f1:	c4 e2 7d 30 c9       	vpmovzxbw %xmm1,%ymm1
+    13f6:	c4 e3 7d 39 e5 01    	vextracti128 $0x1,%ymm4,%xmm5
+    13fc:	c5 f9 70 e4 ee       	vpshufd $0xee,%xmm4,%xmm4
+    1401:	c4 e3 7d 39 ca 01    	vextracti128 $0x1,%ymm1,%xmm2
+    1407:	c5 f9 70 c9 ee       	vpshufd $0xee,%xmm1,%xmm1
+    140c:	c5 f9 70 f5 ee       	vpshufd $0xee,%xmm5,%xmm6
+    1411:	c4 e2 7d 34 ed       	vpmovzxwq %xmm5,%ymm5
+    1416:	c4 e2 d5 47 2d 61 0d 	vpsllvq 0xd61(%rip),%ymm5,%ymm5        # 2180 <_fini+0x6fc>
+    141d:	00 00 
+    141f:	c4 e2 7d 34 e4       	vpmovzxwq %xmm4,%ymm4
+    1424:	c4 e2 dd 47 25 33 0d 	vpsllvq 0xd33(%rip),%ymm4,%ymm4        # 2160 <_fini+0x6dc>
+    142b:	00 00 
+    142d:	c4 62 7d 34 c2       	vpmovzxwq %xmm2,%ymm8
+    1432:	c5 f9 70 d2 ee       	vpshufd $0xee,%xmm2,%xmm2
+    1437:	c4 e2 7d 34 c9       	vpmovzxwq %xmm1,%ymm1
+    143c:	c4 e2 7d 34 f6       	vpmovzxwq %xmm6,%ymm6
+    1441:	c4 e2 cd 47 35 56 0d 	vpsllvq 0xd56(%rip),%ymm6,%ymm6        # 21a0 <_fini+0x71c>
+    1448:	00 00 
+    144a:	c4 62 bd 47 05 cd 0c 	vpsllvq 0xccd(%rip),%ymm8,%ymm8        # 2120 <_fini+0x69c>
+    1451:	00 00 
+    1453:	c4 62 7d 34 ca       	vpmovzxwq %xmm2,%ymm9
+    1458:	c5 e9 73 db 07       	vpsrldq $0x7,%xmm3,%xmm2
+    145d:	c4 e2 b5 47 1d 9a 0c 	vpsllvq 0xc9a(%rip),%ymm9,%ymm3        # 2100 <_fini+0x67c>
+    1464:	00 00 
+    1466:	c4 62 7d 32 d2       	vpmovzxbq %xmm2,%ymm10
+    146b:	c4 e2 f5 47 15 6c 0c 	vpsllvq 0xc6c(%rip),%ymm1,%ymm2        # 20e0 <_fini+0x65c>
+    1472:	00 00 
+    1474:	c4 e2 c5 47 0d c3 0c 	vpsllvq 0xcc3(%rip),%ymm7,%ymm1        # 2140 <_fini+0x6bc>
+    147b:	00 00 
+    147d:	c4 e3 7d 39 c7 01    	vextracti128 $0x1,%ymm0,%xmm7
+    1483:	c4 62 ad 47 15 34 0d 	vpsllvq 0xd34(%rip),%ymm10,%ymm10        # 21c0 <_fini+0x73c>
+    148a:	00 00 
+    148c:	c4 e3 41 0f c0 07    	vpalignr $0x7,%xmm0,%xmm7,%xmm0
+    1492:	c4 62 7d 30 c8       	vpmovzxbw %xmm0,%ymm9
+    1497:	c4 e2 7d 32 c0       	vpmovzxbq %xmm0,%ymm0
+    149c:	c4 e2 fd 47 05 3b 0d 	vpsllvq 0xd3b(%rip),%ymm0,%ymm0        # 21e0 <_fini+0x75c>
+    14a3:	00 00 
+    14a5:	c4 43 7d 39 cb 01    	vextracti128 $0x1,%ymm9,%xmm11
+    14ab:	c4 41 79 70 c9 ee    	vpshufd $0xee,%xmm9,%xmm9
+    14b1:	c4 41 79 70 e3 ee    	vpshufd $0xee,%xmm11,%xmm12
+    14b7:	c4 42 7d 34 db       	vpmovzxwq %xmm11,%ymm11
+    14bc:	c4 62 a5 47 1d 5b 0d 	vpsllvq 0xd5b(%rip),%ymm11,%ymm11        # 2220 <_fini+0x79c>
+    14c3:	00 00 
+    14c5:	c4 42 7d 34 c9       	vpmovzxwq %xmm9,%ymm9
+    14ca:	c4 62 b5 47 0d 2d 0d 	vpsllvq 0xd2d(%rip),%ymm9,%ymm9        # 2200 <_fini+0x77c>
+    14d1:	00 00 
+    14d3:	c4 42 7d 34 e4       	vpmovzxwq %xmm12,%ymm12
+    14d8:	c4 62 9d 47 25 5f 0d 	vpsllvq 0xd5f(%rip),%ymm12,%ymm12        # 2240 <_fini+0x7bc>
+    14df:	00 00 
+    14e1:	c5 a5 eb ed          	vpor   %ymm5,%ymm11,%ymm5
+    14e5:	c5 a1 73 df 07       	vpsrldq $0x7,%xmm7,%xmm11
+    14ea:	c5 c1 73 df 0b       	vpsrldq $0xb,%xmm7,%xmm7
+    14ef:	c5 9d eb f6          	vpor   %ymm6,%ymm12,%ymm6
+    14f3:	c4 e2 7d 32 ff       	vpmovzxbq %xmm7,%ymm7
+    14f8:	c4 42 7d 32 db       	vpmovzxbq %xmm11,%ymm11
+    14fd:	c5 bd eb ed          	vpor   %ymm5,%ymm8,%ymm5
+    1501:	c5 cd eb db          	vpor   %ymm3,%ymm6,%ymm3
+    1505:	c4 e2 c5 47 35 52 0d 	vpsllvq 0xd52(%rip),%ymm7,%ymm6        # 2260 <_fini+0x7dc>
+    150c:	00 00 
+    150e:	c5 b5 eb f6          	vpor   %ymm6,%ymm9,%ymm6
+    1512:	c5 dd eb e6          	vpor   %ymm6,%ymm4,%ymm4
+    1516:	c5 dd eb d2          	vpor   %ymm2,%ymm4,%ymm2
+    151a:	c4 e2 a5 47 25 5d 0d 	vpsllvq 0xd5d(%rip),%ymm11,%ymm4        # 2280 <_fini+0x7fc>
+    1521:	00 00 
+    1523:	c5 ed eb d3          	vpor   %ymm3,%ymm2,%ymm2
+    1527:	c5 fd eb c4          	vpor   %ymm4,%ymm0,%ymm0
+    152b:	c5 ad eb c0          	vpor   %ymm0,%ymm10,%ymm0
+    152f:	c5 f5 eb c0          	vpor   %ymm0,%ymm1,%ymm0
+    1533:	c5 fd eb c5          	vpor   %ymm5,%ymm0,%ymm0
+    1537:	c5 fd eb c2          	vpor   %ymm2,%ymm0,%ymm0
+    153b:	c4 e3 7d 39 c1 01    	vextracti128 $0x1,%ymm0,%xmm1
+    1541:	c5 f9 eb c1          	vpor   %xmm1,%xmm0,%xmm0
+    1545:	c5 f9 70 c8 ee       	vpshufd $0xee,%xmm0,%xmm1
+    154a:	c5 f9 eb c1          	vpor   %xmm1,%xmm0,%xmm0
+    154e:	c4 e1 f9 7e c0       	vmovq  %xmm0,%rax
+    1553:	f3 48 0f bc f0       	tzcnt  %rax,%rsi
+    1558:	6a 01                	push   $0x1
+    155a:	6a 00                	push   $0x0
+    155c:	c5 f8 77             	vzeroupper
+    155f:	e8 2c 04 00 00       	call   1990 <std::io::io::print[KGENParamList[::Writable],*::Writable,LITImmutOrigin,::Origin[::Bool(False), $2]](*$0,sep:::StringSlice[::Bool(False), StaticConstantOrigin, *?],end:::StringSlice[::Bool(False), StaticConstantOrigin, *?],flush:::Bool,file:::FileDescriptor$),Ts.values`=[[typevalue<#kgen.instref<^["std::collections::string::string::String">>, struct<(pointer<none>, index, index) memoryOnly>], [typevalue<#kgen.instref<^["std::builtin::simd::SIMD,dtype=ui64,size=1">>, scalar<ui64>]]>
+    1564:	48 83 c4 10          	add    $0x10,%rsp
+    1568:	f6 44 24 1f 40       	testb  $0x40,0x1f(%rsp)
+    156d:	74 15                	je     1584 <main+0x364>
+    156f:	48 8b 7c 24 08       	mov    0x8(%rsp),%rdi
+    1574:	f0 48 ff 4f f8       	lock decq -0x8(%rdi)
+    1579:	75 09                	jne    1584 <main+0x364>
+    157b:	48 83 c7 f8          	add    $0xfffffffffffffff8,%rdi
+    157f:	e8 3c fb ff ff       	call   10c0 <KGEN_CompilerRT_AlignedFree@plt>
+    1584:	e8 27 fb ff ff       	call   10b0 <KGEN_CompilerRT_DestroyGlobals@plt>
+    1589:	31 c0                	xor    %eax,%eax
+    158b:	48 8d 65 f0          	lea    -0x10(%rbp),%rsp
+    158f:	5b                   	pop    %rbx
+    1590:	41 5e                	pop    %r14
+    1592:	5d                   	pop    %rbp
+    1593:	c3                   	ret
+    1594:	66 66 66 2e 0f 1f 84 	data16 data16 cs nopw 0x0(%rax,%rax,1)
+    159b:	00 00 00 00 00 
+

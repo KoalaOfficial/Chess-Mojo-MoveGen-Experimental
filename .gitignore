@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.mojo.o
+build/
+dist/
+*.egg-info/
+.DS_Store
