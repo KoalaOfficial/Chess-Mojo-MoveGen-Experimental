@@ -203,7 +203,7 @@ def _KnightAttacksBitboard(square: Int) -> UInt64:
     return attacks
 
 
-# Surowa, płaska tablica 64 elementów UInt64 w comptime (zajmuje dokładnie 512 bajtów)
+
 comptime BISHOP_DIAGONALS = SIMD[DType.uint64, 64](
     _generate_diagonal_mask(0),  _generate_diagonal_mask(1),  _generate_diagonal_mask(2),  _generate_diagonal_mask(3),
     _generate_diagonal_mask(4),  _generate_diagonal_mask(5),  _generate_diagonal_mask(6),  _generate_diagonal_mask(7),
@@ -241,7 +241,7 @@ comptime BISHOP_ANTIDIAGONALS = SIMD[DType.uint64,64](
     _generate_antidiag_mask(56), _generate_antidiag_mask(57), _generate_antidiag_mask(58), _generate_antidiag_mask(59),
     _generate_antidiag_mask(60), _generate_antidiag_mask(61), _generate_antidiag_mask(62), _generate_antidiag_mask(63),
 )
-# --- UNIWERSALNY SZABLON ATAKÓW ---
+
 
 comptime ROOK_RANKS = SIMD[DType.uint64,64](
     _generate_rank_mask(0),  _generate_rank_mask(1),  _generate_rank_mask(2),  _generate_rank_mask(3),
