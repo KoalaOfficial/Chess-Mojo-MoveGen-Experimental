@@ -30,7 +30,7 @@ def QueenAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8,64],occupancy: 
 @always_inline
 def BishopAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64],occupancy: UInt64) -> Tuple[UInt64, Int]:
 
-    # Znajdź gońca
+
     var bishop_mask = board.eq(PieceID)
     var bishop_bitmask = bishop_mask.cast[DType.uint8]()
 
@@ -41,14 +41,13 @@ def BishopAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64],occupancy
 
     var index = Int(count_trailing_zeros(packed))
 
-    # bit gońca
     var bishop_bit = UInt64(1) << UInt64(index)
 
     var attacks1 = HyperbolaAttacks(occupancy,bishop_bit,BISHOP_DIAGONALS[index])
 
     var attacks2 = HyperbolaAttacks(occupancy,bishop_bit,BISHOP_ANTIDIAGONALS[index])
 
-    # połącz obie linie
+
     var final_attacks_bitboard = attacks1 | attacks2
 
     return final_attacks_bitboard,index
@@ -59,7 +58,7 @@ def BishopAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64],occupancy
 @always_inline
 def RookAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64],occupancy: UInt64) -> Tuple[UInt64, Int]:
 
-    # Znajdź wieżę
+   
     var rook_mask = board.eq(PieceID)
     var rook_bitmask = rook_mask.cast[DType.uint8]()
 
@@ -70,14 +69,14 @@ def RookAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64],occupancy: 
 
     var index = Int(count_trailing_zeros(packed))
 
-    # bit wieży
+
     var rook_bit = UInt64(1) << UInt64(index)
 
     var attacks1 = HyperbolaAttacks(occupancy,rook_bit,ROOK_FILES[index])
 
     var attacks2 = HyperbolaAttacks(occupancy,rook_bit,ROOK_RANKS[index])
 
-    # połącz obie linie
+
     var final_attacks_bitboard = attacks1 | attacks2
 
     return final_attacks_bitboard,index
@@ -85,7 +84,7 @@ def RookAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64],occupancy: 
 @always_inline
 def KnightAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64]) -> Tuple[UInt64, Int]:
 
-    # Znajdź skoczka
+
     var knight_mask = board.eq(PieceID)
     var knight_bitmask = knight_mask.cast[DType.uint8]()
 
@@ -96,7 +95,7 @@ def KnightAttacksTemplate[PieceID: UInt8](board: SIMD[DType.uint8, 64]) -> Tuple
 
     var index = Int(count_trailing_zeros(packed))
 
-    # gotowa maska ataków skoczka
+
     var final_attacks_bitboard = KNIGHT_ATTACKS[index]
 
     return final_attacks_bitboard,index
@@ -135,7 +134,7 @@ def PawnGeometry[PieceID: UInt8](board: SIMD[DType.uint8, 64],ref table: InlineA
 
     return result_data^, result_squares^, count
 
-#Goniec
+#Bishop
 #-----------------------------------------------------------------------------------------------#
 def BlackBishopLeftAttacks(board: SIMD[DType.uint8, BoardSize],occupancy: UInt64) -> Tuple[UInt64, Int]:
     return BishopAttacksTemplate[0x3E](board,occupancy)
@@ -151,7 +150,7 @@ def WhiteBishopRightAttacks(board: SIMD[DType.uint8, BoardSize],occupancy: UInt6
 
 #------------------------------------------------------------------------------------------------#
 
-#Wieża
+#Rook
 #------------------------------------------------------------------------------------------------#
 def WhiteRookLeftAttacks(board: SIMD[DType.uint8, BoardSize],occupancy: UInt64) -> Tuple[UInt64, Int]:
     return RookAttacksTemplate[0x5C](board,occupancy)
